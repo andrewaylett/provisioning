@@ -1,0 +1,14 @@
+An example of provisioning a web server using salt, running in Vagrant.
+
+To bring up, run `vagrant up`.
+
+To test, run `./test.sh`.
+
+This is a fairly simple example -- we rely on Vagrant to bootstrap salt for us,
+running without a master.  The salt state files in ./salt/ provision the
+service, ensuring that apache is installed and running and putting the rather
+bare-bones website in place.  We forward port 80 in the VM out to port 8080 on
+the host.
+
+The test script verifies that the web server has been set up correctly -- it
+downloads the front page and verifies that it's the same as what's deployed.
